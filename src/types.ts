@@ -14,4 +14,5 @@ export type Project = {
 	url: string;
 	branch: Branch;
 	tags: Array<Tag>;
+	active: boolean;
 };

@@ -12,10 +12,10 @@ export const data: Project[] = [
 	},
 	{
 		title: 'HW-Technik',
-		url: 'https://hwtechnik.at',
+		url: 'https://www-hwtechnik-at.vercel.app/',
 		branch: 'freelance',
 		tags: ['web', 'design', 'hosting'],
-		active: true,
+		active: false,
 	},
 	{
 		title: 'assaabloy',

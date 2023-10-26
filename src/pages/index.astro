@@ -1,11 +1,7 @@
 ---
-import Base from '../layouts/base.astro';
-
-import Grid from '../components/grid.astro';
-import Nav from '../components/nav.astro';
-import AustriaFlag from '../components/austria-flag.astro';
-
-// import CaseCard from '../components/case-card.astro';
+import { Base } from '../layouts/index.astro';
+import { projects } from '../constants/projects';
+import { Grid, Nav, AustriaFlag, CaseCard } from '../components/index.astro';
 ---
 
 <Base>
@@ -13,11 +9,21 @@ import AustriaFlag from '../components/austria-flag.astro';
 		<Grid />
 		<Nav />
 
-		<div class='min-h-screen py-[50vh] pb-[30vw]'>
-			<h1 class='text-2xl animate-pulse'>Work comes soon</h1>
-			<!-- <div class='space-y-36'>
-					{projects.map((project) => <CaseCard {...project} />)}
-				</div> -->
+		<div class='min-h-screen py-[50vh]'>
+			{
+				projects ? (
+					<div class='space-y-36'>
+						{projects.map(
+							(project) =>
+								project.active && <CaseCard {...project} />
+						)}
+					</div>
+				) : (
+					<h1 class='text-lg font-light animate-pulse'>
+						Work comes soon
+					</h1>
+				)
+			}
 		</div>
 		<div class='fixed right-0 w-1/2 h-full space-y-12 pt-[50vh]'>
 			<h1

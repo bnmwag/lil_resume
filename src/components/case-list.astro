@@ -1,0 +1,17 @@
+---
+import { projects } from '../constants/projects';
+import { CaseCard } from '../components/index.astro';
+---
+
+{
+	projects ? (
+		<div class='space-y-36'>
+			{projects.map(
+				(project, index) =>
+					project.active && <CaseCard {...project} index={index} />
+			)}
+		</div>
+	) : (
+		<h1 class='text-lg font-light animate-pulse'>Work comes soon</h1>
+	)
+}

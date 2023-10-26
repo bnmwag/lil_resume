@@ -1,12 +1,16 @@
 ---
 import type { Project } from '../types.ts';
 
-interface Props extends Project {}
+interface Props extends Project {
+	index: number;
+}
 
-const { title, url, branch, tags } = Astro.props;
+const { title, url, branch, tags, index } = Astro.props;
 ---
 
-<div class='flex items-start gap-x-16'>
+<div class='anim-fade-in | flex items-start gap-x-16'
+	style=`animation-delay: ${index * 0.1}s`
+>
 	<div class='space-y-1'>
 		<a
 			href={url}

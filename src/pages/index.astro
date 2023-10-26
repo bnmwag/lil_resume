@@ -1,7 +1,6 @@
 ---
 import { Base } from '../layouts/index.astro';
-import { projects } from '../constants/projects';
-import { Grid, Nav, AustriaFlag, CaseCard } from '../components/index.astro';
+import { Grid, Nav, AustriaFlag, CaseList } from '../components/index.astro';
 ---
 
 <Base>
@@ -10,22 +9,11 @@ import { Grid, Nav, AustriaFlag, CaseCard } from '../components/index.astro';
 		<Nav />
 
 		<div class='min-h-screen py-[50vh]'>
-			{
-				projects ? (
-					<div class='space-y-36'>
-						{projects.map(
-							(project) =>
-								project.active && <CaseCard {...project} />
-						)}
-					</div>
-				) : (
-					<h1 class='text-lg font-light animate-pulse'>
-						Work comes soon
-					</h1>
-				)
-			}
+			<CaseList />
 		</div>
-		<div class='fixed right-0 w-1/2 h-full space-y-12 pt-[50vh]'>
+		<div
+			class='anim-fade-in | fixed right-0 w-1/2 h-full space-y-12 pt-[50vh]'
+		>
 			<h1
 				class='font-light text-2xl tracking-[-0.05rem] flex items-center gap-x-2'
 			>

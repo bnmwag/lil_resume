@@ -1,0 +1,22 @@
+---
+import type { Project } from '../types.ts';
+
+interface Props extends Project {}
+
+const { title, url, branch, tags } = Astro.props;
+---
+
+<div class='flex items-start gap-x-16'>
+	<div class='space-y-1'>
+		<a
+			href={url}
+			target='_blank'
+			rel='noopener noreferrer'
+			class='text-2xl tracking-[-0.05rem]'>{title}</a
+		>
+		<p class='text-xs uppercase text-neutral-500'>{branch}</p>
+	</div>
+	<ul class='space-y-2'>
+		{tags.map((tag) => <li class='uppercase text-xs'>{tag}</li>)}
+	</ul>
+</div>

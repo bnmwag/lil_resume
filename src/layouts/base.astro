@@ -11,6 +11,8 @@ import '@fontsource/be-vietnam-pro/700.css';
 import '@fontsource/be-vietnam-pro/800.css';
 import '@fontsource/be-vietnam-pro/900.css';
 
+import { ViewTransitions } from 'astro:transitions';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SEO } from 'astro-seo';
 ---
@@ -18,6 +20,7 @@ import { SEO } from 'astro-seo';
 <html lang='en'>
 	<head>
 		<meta charset='utf-8' />
+		<ViewTransitions />
 		<SEO
 			title='bnmwag'
 			description='Creative developer from Linz, Austria'

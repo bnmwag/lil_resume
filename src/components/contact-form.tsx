@@ -17,48 +17,8 @@ import { sendWH } from '@/lib/discord';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Textarea } from './ui/textarea';
-
-const all_interests = [
-	'Web Development',
-	'Mobile Development',
-	'UI/UX Design',
-	'Data Science',
-	'Machine Learning',
-	'Artificial Intelligence',
-	'Cloud Computing',
-];
-
-const all_budgets = ['<500', '500-1k', '3k-5k', '5k-10k'];
-
-const formSchema = z.object({
-	name: z
-		.string()
-		.min(3, {
-			message: 'Please enter a valid name',
-		})
-		.max(50, {
-			message: 'Name must be less than 50 characters',
-		}),
-	email: z.string().email({
-		message: 'Please enter a valid email address',
-	}),
-	interests: z
-		.array(
-			z.string().refine((v) => all_interests.includes(v), {
-				message: 'Please select a valid interest',
-			})
-		)
-		.nonempty({
-			message: 'Please select at least one interest',
-		}),
-	budget: z
-		.string()
-		.min(1, {
-			message: 'Please select a budget',
-		})
-		.refine((v) => all_budgets.includes(v)),
-	info: z.string().optional(),
-});
+import Badge from './badge';
+import { formSchema, all_budgets, all_interests } from '@/lib/schemas';
 
 const ContactForm: React.FC = (): JSX.Element => {
 	const [interests, setInterests] = useState<string[]>([]);
@@ -189,29 +149,18 @@ const ContactForm: React.FC = (): JSX.Element => {
 																	interests.includes(
 																		interest
 																	);
-																return (
-																	<button
-																		key={
-																			interest
-																		}
-																		type='button'
-																		className={`px-4 py-1 rounded-full transition-colors duration-200 flex items-center gap-x-2 bg-transparent text-foreground hover:bg-foreground/10 text-sm ${
-																			isActive
-																				? 'border-2 border-emerald-500'
-																				: 'border-2'
-																		}`}
-																		onClick={() => {
-																			handleInterestChange(
-																				interest,
-																				field
-																			);
-																		}}
-																	>
-																		{
-																			interest
-																		}
-																	</button>
-																);
+
+																const props = {
+																	key: interest,
+																	isActive,
+																	label: interest,
+																	action: () => {
+																		// prettier-ignore
+																		handleInterestChange(interest,field);
+																	},
+																};
+																// prettier-ignore
+																return <Badge {...props} />
 															}
 														)}
 													</div>
@@ -237,26 +186,18 @@ const ContactForm: React.FC = (): JSX.Element => {
 																const isActive =
 																	field.value ===
 																	budget;
-																return (
-																	<button
-																		key={
-																			budget
-																		}
-																		type='button'
-																		className={`px-4 py-1 rounded-full transition-colors duration-200 flex items-center gap-x-2 bg-transparent text-foreground hover:bg-foreground/10 text-sm ${
-																			isActive
-																				? 'border-2 border-emerald-500'
-																				: 'border-2'
-																		}`}
-																		onClick={() => {
-																			field.onChange(
-																				budget
-																			);
-																		}}
-																	>
-																		{budget}
-																	</button>
-																);
+
+																const props = {
+																	key: budget,
+																	isActive,
+																	label: budget,
+																	action: () => {
+																		// prettier-ignore
+																		field.onChange(budget);
+																	},
+																};
+																// prettier-ignore
+																return <Badge {...props} />
 															}
 														)}
 													</div>

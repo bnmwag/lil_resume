@@ -2,12 +2,11 @@ import * as z from 'zod';
 
 export const all_interests = [
 	'Web Development',
-	'Mobile Development',
+	'Blog',
 	'UI/UX Design',
-	'Data Science',
-	'Machine Learning',
-	'Artificial Intelligence',
-	'Cloud Computing',
+	'CMS Integration',
+	'Hosting',
+	'WebGl / 3D',
 ];
 
 export const all_budgets = ['<500', '500-1k', '3k-5k', '5k-10k'];

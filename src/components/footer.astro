@@ -1,3 +1,7 @@
+---
+import ThemeToggles from './theme-toggles';
+---
+
 <div class='mt-[50vh]'>
 	<div class='grid grid-cols-3 gap-y-12'>
 		<div class='flex flex-col gap-y-4'>
@@ -12,14 +16,15 @@
 					>available for work</span
 				>
 			</div>
+			<ThemeToggles client:load />
 		</div>
 
 		<div
-			class='max-bot:pl-0 max-bot:col-start-1 max-mid:pl-12 max-mid:col-start-2 high:col-start-2 col-span-full grid grid-cols-2 text-neutral-500 text-sm'
+			class='max-bot:pl-0 max-bot:col-start-1 max-mid:pl-12 max-mid:col-start-2 high:col-start-2 col-span-full grid grid-cols-2 text-muted-foreground text-sm'
 		>
 			<div class='flex flex-col gap-y-4'>
 				<a href='/contact'>Reach out</a>
-				<a href='/st.bnmwag.dev'>Studio</a>
+				<a href='https://st.bnmwag.dev'>Studio</a>
 				<a href='/contact'>Github</a>
 			</div>
 			<div class='flex flex-col gap-y-4'>

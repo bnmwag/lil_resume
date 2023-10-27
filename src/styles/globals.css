@@ -71,10 +71,14 @@
 		@apply border-border;
 	}
 
-	@media (prefers-color-scheme: dark) {
+	/* @media (prefers-color-scheme: dark) {
 		body {
 			@apply dark;
 		}
+	} */
+
+	.line-gradient {
+		@apply bg-gradient-to-r from-primary to-accent;
 	}
 
 	input:-webkit-autofill {
@@ -172,15 +176,5 @@
 
 	.anim-slide-in:nth-child(3) {
 		animation-delay: 0.5s;
-	}
-
-	.line-gradient {
-		background-image: linear-gradient(
-			180deg,
-			rgba(38, 38, 38, 0) 0%,
-			rgb(38 38 38) 15%,
-			rgb(38 38 38) 85%,
-			rgba(38, 38, 38, 0) 100%
-		);
 	}
 }

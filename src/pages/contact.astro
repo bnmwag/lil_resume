@@ -1,0 +1,26 @@
+---
+import { Base } from '@/layouts/index.astro';
+import { Grid, Nav, ContactInfo } from '@/components/index.astro';
+import ContactForm from '@/components/contact-form.tsx';
+
+const whUrl = import.meta.env.WEBHOOK_URL;
+---
+
+<Base>
+	<div class='w-full px-[40px] mid:px-[120px] grid mid:grid-cols-2'>
+		<Grid />
+		<Nav />
+
+		<div class='min-h-screen py-[25vh] mid:py-[50vh]'>
+			<div class='anim-fade-in | block mb-36 mid:hidden'>
+				<ContactInfo />
+			</div>
+			<ContactForm client:idle whUrl={whUrl} />
+		</div>
+		<div
+			class='anim-fade-in | fixed right-0 w-1/2 h-full pt-[50vh] max-mid:hidden'
+		>
+			<ContactInfo />
+		</div>
+	</div>
+</Base>

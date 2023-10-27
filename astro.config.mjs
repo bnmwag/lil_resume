@@ -10,9 +10,7 @@ export default defineConfig({
 		tailwind({
 			applyBaseStyles: false,
 		}),
-		react({
-			experimentalReactChildren: true,
-		}),
+		react({}),
 	],
 	output: 'server',
 	adapter: vercel(),

@@ -4,8 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Loader2, X } from 'lucide-react';
 
-import UseAnimations from 'react-useanimations';
-import icon from 'react-useanimations/lib/radioButton';
 import { Button } from '@/components/ui/button';
 import {
 	Form,
@@ -15,23 +13,52 @@ import {
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form';
+import { sendWH } from '@/lib/discord';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Textarea } from './ui/textarea';
-import { all_interests, all_budgets, formSchema } from '@/lib/schemas';
-import { sendWH } from '@/lib/discord';
 
-const statusContainerConfig = {
-	animate: { opacity: 1, y: 0 },
-	exit: { opacity: 0, y: 100 },
-	initial: { opacity: 0, y: -100 },
+const all_interests = [
+	'Web Development',
+	'Mobile Development',
+	'UI/UX Design',
+	'Data Science',
+	'Machine Learning',
+	'Artificial Intelligence',
+	'Cloud Computing',
+];
 
-	transition: {
-		type: 'spring',
-		damping: 10,
-		stiffness: 100,
-	},
-};
+const all_budgets = ['<500', '500-1k', '3k-5k', '5k-10k'];
+
+const formSchema = z.object({
+	name: z
+		.string()
+		.min(3, {
+			message: 'Please enter a valid name',
+		})
+		.max(50, {
+			message: 'Name must be less than 50 characters',
+		}),
+	email: z.string().email({
+		message: 'Please enter a valid email address',
+	}),
+	interests: z
+		.array(
+			z.string().refine((v) => all_interests.includes(v), {
+				message: 'Please select a valid interest',
+			})
+		)
+		.nonempty({
+			message: 'Please select at least one interest',
+		}),
+	budget: z
+		.string()
+		.min(1, {
+			message: 'Please select a budget',
+		})
+		.refine((v) => all_budgets.includes(v)),
+	info: z.string().optional(),
+});
 
 const ContactForm: React.FC = (): JSX.Element => {
 	const [interests, setInterests] = useState<string[]>([]);
@@ -39,9 +66,21 @@ const ContactForm: React.FC = (): JSX.Element => {
 		'idle' | 'loading' | 'success' | 'error'
 	>('idle');
 
+	const statusContainerConfig = {
+		animate: { opacity: 1, y: 0 },
+		exit: { opacity: 0, y: 100 },
+		initial: { opacity: 0, y: -100 },
+
+		transition: {
+			type: 'spring',
+			damping: 10,
+			stiffness: 100,
+		},
+	};
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema as any),
-		mode: 'onChange',
+		mode: 'onBlur',
 		defaultValues: {
 			name: '',
 			email: '',
@@ -97,8 +136,9 @@ const ContactForm: React.FC = (): JSX.Element => {
 							<form
 								onSubmit={(e) => {
 									e.preventDefault();
-									form.trigger().then((isValid) => {
-										if (isValid) onSubmit(form.getValues());
+									form.trigger().then(async (isValid) => {
+										if (isValid)
+											await onSubmit(form.getValues());
 									});
 								}}
 								className='anim-fade-in | space-y-8 max-w-[750px] pr-12'
@@ -150,49 +190,27 @@ const ContactForm: React.FC = (): JSX.Element => {
 																		interest
 																	);
 																return (
-																	<UseAnimations
+																	<button
 																		key={
 																			interest
 																		}
-																		animation={
-																			icon
-																		}
-																		size={
-																			24
-																		}
-																		strokeColor={
+																		type='button'
+																		className={`px-4 py-1 rounded-full transition-colors duration-200 flex items-center gap-x-2 bg-transparent text-white hover:bg-white/10 text-sm ${
 																			isActive
-																				? '#10b981'
-																				: '#fff'
-																		}
+																				? 'border-2 border-emerald-500'
+																				: 'border-2'
+																		}`}
 																		onClick={() => {
 																			handleInterestChange(
 																				interest,
 																				field
 																			);
 																		}}
-																		render={(
-																			eventProps,
-																			animationProps
-																		) => (
-																			<button
-																				type='button'
-																				className={`px-2 pr-4 py-1 rounded-full transition-colors duration-200 flex items-center gap-x-2 bg-transparent text-white hover:bg-white/10 ${
-																					isActive
-																						? 'border-2 border-emerald-500'
-																						: 'border-2'
-																				}`}
-																				{...eventProps}
-																			>
-																				<div
-																					{...animationProps}
-																				/>
-																				{
-																					interest
-																				}
-																			</button>
-																		)}
-																	/>
+																	>
+																		{
+																			interest
+																		}
+																	</button>
 																);
 															}
 														)}
@@ -225,7 +243,7 @@ const ContactForm: React.FC = (): JSX.Element => {
 																			budget
 																		}
 																		type='button'
-																		className={`px-4 py-1 rounded-full transition-colors duration-200 flex items-center gap-x-2 bg-transparent text-white hover:bg-white/10 ${
+																		className={`px-4 py-1 rounded-full transition-colors duration-200 flex items-center gap-x-2 bg-transparent text-white hover:bg-white/10 text-sm ${
 																			isActive
 																				? 'border-2 border-emerald-500'
 																				: 'border-2'

@@ -17,7 +17,7 @@ const toggles = [
 ] satisfies { value: Theme; icon: JSX.Element }[];
 
 const ThemeToggles: React.FC = () => {
-	const [theme, setThemeState] = useState<Theme>('theme-light');
+	const [theme, setThemeState] = useState<Theme>('dark');
 
 	useEffect(() => {
 		const isDarkMode = document.documentElement.classList.contains('dark');
@@ -31,6 +31,8 @@ const ThemeToggles: React.FC = () => {
 				window.matchMedia('(prefers-color-scheme: dark)').matches);
 		document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
 	}, [theme]);
+
+	return null;
 
 	return (
 		<div className='flex items-center gap-x-2'>

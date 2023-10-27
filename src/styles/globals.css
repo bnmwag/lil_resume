@@ -71,11 +71,11 @@
 		@apply border-border;
 	}
 
-	/* @media (prefers-color-scheme: dark) {
+	@media (prefers-color-scheme: dark) {
 		body {
 			@apply dark;
 		}
-	} */
+	}
 
 	.line-gradient {
 		@apply bg-gradient-to-r from-primary to-accent;

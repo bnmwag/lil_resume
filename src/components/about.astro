@@ -1,5 +1,6 @@
 ---
 import { AustriaFlag } from '../components/index.astro';
+import { ArrowRight } from 'lucide-astro';
 ---
 
 <div class='space-y-12'>
@@ -13,4 +14,20 @@ import { AustriaFlag } from '../components/index.astro';
 		Passionate junior developer creating <br class='hidden bot:block' />
 		 innovative solutions through code.
 	</p>
+	<a href='/contact' class='flex items-center gap-x-4 group h-8'>
+		<div
+			class='border-[1px] border-neutral-100 h-2 w-2 bg-transparent rounded-full relative overflow-hidden group-hover:h-6 group-hover:w-6 group-hover:bg-white transition-main'
+		>
+			<ArrowRight
+				size='16'
+				class='absolute top-1/2 left-1/2 -translate-y-1/2 group-hover:-translate-x-1/2 -translate-x-[200%] text-black transition-main'
+			/>
+		</div>
+		<span class='relative'
+			>Hit me up
+			<span
+				class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-neutral-100 transition-main'
+			></span>
+		</span>
+	</a>
 </div>

@@ -143,6 +143,10 @@
 		pointer-events: none;
 	}
 
+	.transition-main {
+		transition: 0.5s cubic-bezier(0.75, 0, 0.25, 1);
+	}
+
 	.anim-ping {
 		animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 	}

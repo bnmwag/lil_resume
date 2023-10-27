@@ -27,7 +27,7 @@ export const sendWH = async ({
 					type: 'rich',
 					color: 0x000000,
 					footer: {
-						text: '_'.repeat(47),
+						text: 'ㅤ'.repeat(47),
 					},
 					fields: [
 						{ name: 'Name', value: name, inline: true },

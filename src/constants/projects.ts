@@ -15,7 +15,7 @@ export const data: Project[] = [
 		url: 'https://www-hwtechnik-at.vercel.app/',
 		branch: 'freelance',
 		tags: ['web', 'design', 'hosting'],
-		active: false,
+		active: true,
 	},
 	{
 		title: 'assaabloy',

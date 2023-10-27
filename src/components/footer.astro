@@ -1,6 +1,28 @@
 ---
+import { getCurrentTimeInVienna } from '@/lib/utils';
 import ThemeToggles from './theme-toggles';
+
+const initialTime = getCurrentTimeInVienna();
 ---
+
+<script>
+	import { getCurrentTimeInVienna } from '@/lib/utils';
+
+	function updateLocalTime() {
+		const localTimeElement = document.getElementById('local-time');
+
+		if (!localTimeElement) {
+			console.error('Element with id "local-time" not found');
+			return;
+		}
+
+		const formattedTime = getCurrentTimeInVienna();
+
+		localTimeElement.innerHTML = formattedTime;
+	}
+
+	setInterval(updateLocalTime, 1000);
+</script>
 
 <div class='mt-[50vh]'>
 	<div class='grid grid-cols-3 gap-y-12'>
@@ -16,6 +38,12 @@ import ThemeToggles from './theme-toggles';
 					>available for work</span
 				>
 			</div>
+			<span
+				id='local-time'
+				class='whitespace-nowrap text-muted-foreground text-sm'
+			>
+				{initialTime}
+			</span>
 			<ThemeToggles client:load />
 		</div>
 

@@ -26,6 +26,26 @@
 	}
 }
 
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
 .anim-ping {
 	animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }

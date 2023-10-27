@@ -34,20 +34,20 @@ const ThemeToggles: React.FC = () => {
 
 	return null;
 
-	return (
-		<div className='flex items-center gap-x-2'>
-			{toggles.map((toggle) => (
-				<Button
-					variant={toggle.value === theme ? 'outline' : 'ghost'}
-					key={toggle.value}
-					size={'sm'}
-					onClick={() => setThemeState(toggle.value)}
-				>
-					{toggle.icon}
-				</Button>
-			))}
-		</div>
-	);
+	// return (
+	// 	<div className='flex items-center gap-x-2'>
+	// 		{toggles.map((toggle) => (
+	// 			<Button
+	// 				variant={toggle.value === theme ? 'outline' : 'ghost'}
+	// 				key={toggle.value}
+	// 				size={'sm'}
+	// 				onClick={() => setThemeState(toggle.value)}
+	// 			>
+	// 				{toggle.icon}
+	// 			</Button>
+	// 		))}
+	// 	</div>
+	// );
 };
 
 export default ThemeToggles;

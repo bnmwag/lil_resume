@@ -33,7 +33,7 @@ const statusContainerConfig = {
 	},
 };
 
-const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }) => {
+const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }): JSX.Element => {
 	const [interests, setInterests] = useState<string[]>([]);
 	const [uiState, setUiState] = useState<
 		'idle' | 'loading' | 'success' | 'error'
@@ -89,7 +89,7 @@ const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }) => {
 	}
 
 	return (
-		<>
+		<div>
 			<AnimatePresence mode='wait'>
 				{uiState === 'idle' ? (
 					<motion.div key={'idle'} {...statusContainerConfig}>
@@ -315,7 +315,7 @@ const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }) => {
 					</motion.div>
 				) : null}
 			</AnimatePresence>
-		</>
+		</div>
 	);
 };
 

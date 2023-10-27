@@ -1,7 +1,7 @@
 import Lenis from '@studio-freight/lenis';
 
 const lenis = new Lenis({
-	smoothTouch: true,
+	smoothTouch: false,
 	smoothWheel: true,
 	normalizeWheel: true,
 }) as Lenis;

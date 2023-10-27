@@ -91,7 +91,11 @@ const ContactForm: React.FC = (): JSX.Element => {
 		<div>
 			<AnimatePresence mode='wait'>
 				{uiState === 'idle' ? (
-					<motion.div key={'idle'} {...statusContainerConfig}>
+					<motion.div
+						key={'idle'}
+						{...statusContainerConfig}
+						initial={{ opacity: 1, y: 0 }}
+					>
 						<Form {...form}>
 							<form
 								onSubmit={(e) => {
@@ -142,7 +146,7 @@ const ContactForm: React.FC = (): JSX.Element => {
 											<FormItem className='flex-1'>
 												<FormLabel>Interests</FormLabel>
 												<FormControl>
-													<div className='flex flex-wrap gap-4'>
+													<div className='flex flex-wrap gap-2 bot:gap-3'>
 														{all_interests.map(
 															(interest) => {
 																const isActive =
@@ -180,7 +184,7 @@ const ContactForm: React.FC = (): JSX.Element => {
 													Budget in €
 												</FormLabel>
 												<FormControl>
-													<div className='flex flex-wrap gap-4'>
+													<div className='flex flex-wrap gap-2 bot:gap-3'>
 														{all_budgets.map(
 															(budget) => {
 																const isActive =

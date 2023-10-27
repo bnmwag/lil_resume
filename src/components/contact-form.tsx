@@ -33,7 +33,7 @@ const statusContainerConfig = {
 	},
 };
 
-const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }): JSX.Element => {
+const ContactForm: React.FC = (): JSX.Element => {
 	const [interests, setInterests] = useState<string[]>([]);
 	const [uiState, setUiState] = useState<
 		'idle' | 'loading' | 'success' | 'error'
@@ -69,7 +69,7 @@ const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }): JSX.Element => {
 		setUiState('loading');
 
 		try {
-			const { response } = await sendWH({ values, url: whUrl });
+			const { response } = await sendWH({ values });
 
 			if (response === 'Success') {
 				form.reset();

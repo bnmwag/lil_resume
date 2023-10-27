@@ -4,16 +4,17 @@ import type { formSchema } from './schemas';
 
 type ResponseStatus = 'Success' | 'Error' | null;
 
+const whUrl =
+	'https://discord.com/api/webhooks/1167412407497392189/aCGOT31q8ss9dLend7vA9kDqhmuYMwxjQ-L5Tu6TaQv_BrCCmXoixOB6PiiRC9mSZy3g';
+
 export const sendWH = async ({
 	values,
-	url,
 }: {
 	values: z.infer<typeof formSchema>;
-	url: string;
 }): Promise<{ response: ResponseStatus }> => {
 	let response: ResponseStatus = null;
 
-	const discordClient = new DiscordWebhook(url);
+	const discordClient = new DiscordWebhook(whUrl);
 
 	const { name, email, interests, budget, info } = values;
 

@@ -2,9 +2,6 @@
 import { Base } from '@/layouts/index.astro';
 import { Grid, Nav, ContactInfo } from '@/components/index.astro';
 import ContactForm from '@/components/contact-form.tsx';
-
-const whUrl =
-	'https://discord.com/api/webhooks/1167412407497392189/aCGOT31q8ss9dLend7vA9kDqhmuYMwxjQ-L5Tu6TaQv_BrCCmXoixOB6PiiRC9mSZy3g';
 ---
 
 <Base>
@@ -16,7 +13,7 @@ const whUrl =
 			<div class='anim-fade-in | block mb-36 mid:hidden'>
 				<ContactInfo />
 			</div>
-			<ContactForm client:load whUrl={whUrl} />
+			<ContactForm client:load />
 		</div>
 		<div
 			class='anim-fade-in | fixed right-0 w-1/2 h-full pt-[50vh] max-mid:hidden'

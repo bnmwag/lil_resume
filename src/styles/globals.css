@@ -77,10 +77,6 @@
 		}
 	}
 
-	.line-gradient {
-		@apply bg-gradient-to-r from-primary to-accent;
-	}
-
 	input:-webkit-autofill {
 		background-color: transparent !important;
 	}

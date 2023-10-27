@@ -285,7 +285,9 @@ const ContactForm: React.FC = (): JSX.Element => {
 										</FormItem>
 									)}
 								/>
-								<Button type='submit'>Submit</Button>
+								<Button variant={'outline'} type='submit'>
+									Submit
+								</Button>
 							</form>
 						</Form>
 					</motion.div>

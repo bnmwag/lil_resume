@@ -15,7 +15,7 @@ const whUrl = import.meta.env.WEBHOOK_URL;
 			<div class='anim-fade-in | block mb-36 mid:hidden'>
 				<ContactInfo />
 			</div>
-			<ContactForm client:idle whUrl={whUrl} />
+			<ContactForm client:load whUrl={whUrl} />
 		</div>
 		<div
 			class='anim-fade-in | fixed right-0 w-1/2 h-full pt-[50vh] max-mid:hidden'

@@ -13,7 +13,6 @@ import '@fontsource/be-vietnam-pro/900.css';
 
 import { ViewTransitions } from 'astro:transitions';
 
-import { Analytics } from '@vercel/analytics/react';
 import { SEO } from 'astro-seo';
 ---
 
@@ -64,17 +63,22 @@ if (typeof localStorage !== 'undefined') {
 					{ rel: 'sitemap', href: '/sitemap-index.xml' },
 				],
 				meta: [
-					{ name: 'keywords', content: 'Creative developer' },
-					// prettier-ignore
-					{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
+					{
+						name: 'keywords',
+						content:
+							'Creative developer, Freelance, Austria, Linz, Blog, Website',
+					},
+					{
+						name: 'viewport',
+						content:
+							'width=device-width, initial-scale=1, maximum-scale=1',
+					},
 					{ name: 'generator', content: Astro.generator },
 				],
 			}}
 		/>
 	</head>
 	<body class='bg-background text-foreground font-viet'>
-		<Analytics client:load />
-
 		<slot />
 
 		<script src='../scripts/lenis.ts'></script>

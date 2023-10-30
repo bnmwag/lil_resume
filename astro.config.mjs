@@ -27,5 +27,8 @@ export default defineConfig({
 		compress({}),
 	],
 	output: 'server',
-	adapter: vercel(),
+	adapter: vercel({
+		webAnalytics: { enabled: true },
+		speedInsights: { enabled: true },
+	}),
 });

@@ -20,7 +20,7 @@ import { Textarea } from './ui/textarea';
 import Badge from './badge';
 import { formSchema, all_budgets, all_interests } from '@/lib/schemas';
 
-const ContactForm: React.FC = (): JSX.Element => {
+const ContactForm: React.FC<{ whUrl: string }> = ({ whUrl }): JSX.Element => {
 	const [interests, setInterests] = useState<string[]>([]);
 	const [uiState, setUiState] = useState<
 		'idle' | 'loading' | 'success' | 'error'
@@ -68,7 +68,7 @@ const ContactForm: React.FC = (): JSX.Element => {
 		setUiState('loading');
 
 		try {
-			const { response } = await sendWH({ values });
+			const { response } = await sendWH({ values, whUrl });
 
 			if (response === 'Success') {
 				form.reset();

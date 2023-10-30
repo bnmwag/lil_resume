@@ -4,13 +4,12 @@ import { formSchema } from './schemas';
 
 type ResponseStatus = 'Success' | 'Error' | null;
 
-const whUrl =
-	'https://discord.com/api/webhooks/1167412407497392189/aCGOT31q8ss9dLend7vA9kDqhmuYMwxjQ-L5Tu6TaQv_BrCCmXoixOB6PiiRC9mSZy3g';
-
 export const sendWH = async ({
 	values,
+	whUrl,
 }: {
 	values: z.infer<typeof formSchema>;
+	whUrl: string;
 }): Promise<{ response: ResponseStatus }> => {
 	let response: ResponseStatus = null;
 

@@ -2,6 +2,8 @@
 import { Base } from '@/layouts/index.astro';
 import { Grid, Nav, ContactInfo, Footer } from '@/components/index.astro';
 import ContactForm from '@/components/contact-form.tsx';
+
+const whUrl = import.meta.env.DC_WH_URL;
 ---
 
 <Base>
@@ -13,7 +15,7 @@ import ContactForm from '@/components/contact-form.tsx';
 			<div class='anim-fade-in | block mb-36 mid:hidden'>
 				<ContactInfo />
 			</div>
-			<ContactForm client:idle />
+			<ContactForm client:idle whUrl={whUrl} />
 			<Footer />
 		</div>
 		<div

@@ -26,7 +26,7 @@ const { title, url, branch, tags, index } = Astro.props;
 					class='absolute top-1/2 left-1/2 -translate-y-1/2 group-hover:-translate-x-1/2 -translate-x-[200%] text-background transition-main'
 				/>
 			</div>
-			<span class='relative'>
+			<h3 class='relative'>
 				{title}
 				<span
 					class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-foreground transition-main'
@@ -36,7 +36,7 @@ const { title, url, branch, tags, index } = Astro.props;
 				>
 					{branch}
 				</p>
-			</span>
+			</h3>
 		</a>
 	</div>
 	<ul class='space-y-2'>

@@ -5,23 +5,23 @@ import ThemeToggles from './theme-toggles';
 const initialTime = getCurrentTimeInVienna();
 ---
 
-<script is:inline>
-import { getCurrentTimeInVienna } from '@/lib/utils';
+<script>
+	import { getCurrentTimeInVienna } from '@/lib/utils';
 
-function updateLocalTime() {
-	const localTimeElement = document.getElementById('local-time');
+	function updateLocalTime() {
+		const localTimeElement = document.getElementById('local-time');
 
-	if (!localTimeElement) {
-		console.error('Element with id "local-time" not found');
-		return;
+		if (!localTimeElement) {
+			console.error('Element with id "local-time" not found');
+			return;
+		}
+
+		const formattedTime = getCurrentTimeInVienna();
+
+		localTimeElement.innerHTML = formattedTime;
 	}
 
-	const formattedTime = getCurrentTimeInVienna();
-
-	localTimeElement.innerHTML = formattedTime;
-}
-
-setInterval(updateLocalTime, 1000);
+	setInterval(updateLocalTime, 1000);
 </script>
 
 <div class='mt-[50vh]'>

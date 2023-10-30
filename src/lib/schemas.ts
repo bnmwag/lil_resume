@@ -6,6 +6,7 @@ export const all_interests = [
 	'UI/UX Design',
 	'CMS Integration',
 	'Hosting',
+	'eCommerce',
 	'WebGl / 3D',
 ];
 

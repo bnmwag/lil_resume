@@ -13,12 +13,8 @@ const site = 'https://f.bnmwag.dev';
 export default defineConfig({
 	site,
 	integrations: [
-		tailwind({
-			applyBaseStyles: false,
-		}),
-		react({
-			experimentalReactChildren: true,
-		}),
+		tailwind({ applyBaseStyles: false }),
+		react({ experimentalReactChildren: true }),
 		sitemap(),
 		partytown(),
 		robotsTxt({

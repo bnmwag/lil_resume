@@ -1,6 +1,6 @@
-import type z from 'zod';
+import z from 'zod';
 import DiscordWebhook from 'discord-webhook-ts';
-import type { formSchema } from './schemas';
+import { formSchema } from './schemas';
 
 type ResponseStatus = 'Success' | 'Error' | null;
 
@@ -15,6 +15,12 @@ export const sendWH = async ({
 	let response: ResponseStatus = null;
 
 	try {
+		const isValid = formSchema.safeParse(values);
+
+		if (!isValid.success) {
+			return { response: 'Error' };
+		}
+
 		const discordClient = new DiscordWebhook(whUrl);
 
 		const { name, email, interests, budget, info } = values;

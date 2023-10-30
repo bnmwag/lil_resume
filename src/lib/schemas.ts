@@ -10,7 +10,7 @@ export const all_interests = [
 	'WebGl / 3D',
 ];
 
-export const all_budgets = ['<500', '500-1k', '3k-5k', '5k-10k'];
+export const all_budgets = ['<500', '500-1k', '3k-5k', '5k-10k', '10k+'];
 
 export const formSchema = z.object({
 	name: z

@@ -1,86 +1,83 @@
 ---
-import '@/styles/globals.css';
+import "@/styles/globals.css";
 
-import '@fontsource/be-vietnam-pro/100.css';
-import '@fontsource/be-vietnam-pro/200.css';
-import '@fontsource/be-vietnam-pro/300.css';
-import '@fontsource/be-vietnam-pro/400.css';
-import '@fontsource/be-vietnam-pro/500.css';
-import '@fontsource/be-vietnam-pro/600.css';
-import '@fontsource/be-vietnam-pro/700.css';
-import '@fontsource/be-vietnam-pro/800.css';
-import '@fontsource/be-vietnam-pro/900.css';
+import "@fontsource/be-vietnam-pro/100.css";
+import "@fontsource/be-vietnam-pro/200.css";
+import "@fontsource/be-vietnam-pro/300.css";
+import "@fontsource/be-vietnam-pro/400.css";
+import "@fontsource/be-vietnam-pro/500.css";
+import "@fontsource/be-vietnam-pro/600.css";
+import "@fontsource/be-vietnam-pro/700.css";
+import "@fontsource/be-vietnam-pro/800.css";
+import "@fontsource/be-vietnam-pro/900.css";
 
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
-import { SEO } from 'astro-seo';
+import { SEO } from "astro-seo";
 ---
 
 <script is:inline>
 const getThemePreference = () => {
-	if (
-		typeof localStorage !== 'undefined' &&
-		localStorage.getItem('theme')
-	) {
-		return localStorage.getItem('theme');
-	}
-	return window.matchMedia('(prefers-color-scheme: dark)').matches
-		? 'dark'
-		: 'theme-light';
+  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+    return localStorage.getItem("theme");
+  }
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "theme-light";
 };
-const isDark = getThemePreference() === 'dark';
-document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+const isDark = getThemePreference() === "dark";
+document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-if (typeof localStorage !== 'undefined') {
-	const observer = new MutationObserver(() => {
-		const isDark = document.documentElement.classList.contains('dark');
-		localStorage.setItem('theme', isDark ? 'dark' : 'theme-light');
-	});
-	observer.observe(document.documentElement, {
-		attributes: true,
-		attributeFilter: ['class'],
-	});
+if (typeof localStorage !== "undefined") {
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "theme-light");
+  });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 }
 </script>
 
 <html lang='en'>
-	<head>
-		<meta charset='utf-8' />
-		<ViewTransitions />
-		<SEO
-			title='bnmwag'
-			description='Creative developer from Linz, Austria'
-			openGraph={{
-				basic: {
-					title: 'bnmwag',
-					type: 'portfolio',
-					image: 'https://f.bnmwag.dev/opengraph-image.jpg',
-				},
-			}}
-			extend={{
-				link: [
-					{ rel: 'icon', href: '/favicon.svg' },
-					{ rel: 'sitemap', href: '/sitemap-index.xml' },
-				],
-				meta: [
-					{
-						name: 'keywords',
-						content:
-							'Creative developer, Freelance, Austria, Linz, Blog, Website',
-					},
-					{
-						name: 'viewport',
-						content:
-							'width=device-width, initial-scale=1, maximum-scale=1',
-					},
-					{ name: 'generator', content: Astro.generator },
-				],
-			}}
-		/>
-	</head>
-	<body class='bg-background text-foreground font-viet'>
-		<slot />
+  <head>
+    <meta charset='utf-8' />
+    <ViewTransitions />
+    <SEO
+      title='bnmwag'
+      description='Creative developer from Linz, Austria'
+      openGraph={{
+        basic: {
+          url: "https://f.bnmwag.dev",
+          title: "bnmwag",
+          type: "portfolio",
+          image: "https://f.bnmwag.dev/opengraph-image.jpg",
+        },
+      }}
+      extend={{
+        link: [
+          { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+          { rel: "sitemap", href: "/sitemap-index.xml" },
+        ],
+        meta: [
+          {
+            name: "keywords",
+            content:
+              "Creative developer, Freelance, Austria, Linz, Blog, Website",
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1, maximum-scale=1",
+          },
+          { name: "generator", content: Astro.generator },
+        ],
+      }}
+    />
+  </head>
+  <body class='bg-background text-foreground font-viet'>
+    <slot />
 
-		<script src='../scripts/lenis.ts'></script>
-	</body>
+    <script src='../scripts/lenis.ts'></script>
+  </body>
 </html>

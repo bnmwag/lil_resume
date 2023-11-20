@@ -40,7 +40,7 @@ export const data: Project[] = [
   },
   {
     title: "assaabloy",
-    url: "https://aa-r.vercel.at",
+    url: "https://aa-r.vercel.app",
     branch: "sps",
     tags: ["web", "webgl", "design"],
     active: true,

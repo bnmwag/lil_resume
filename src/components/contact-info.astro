@@ -1,9 +1,7 @@
 <div class='space-y-12'>
   <h2 class='font-light text-2xl tracking-[-0.05rem]'>Let's get started</h2>
   <p class='text-neutral-500 text-xl font-light max-w-lg leading-relaxed'>
-    either contact me <a class='underline' href='mailto:bnm.wag@gmail.com'
-      >direct</a
-    >
+    either contact me <a class='underline' href='mailto:bnm.wag@gmail.com'>direct</a>
     <!-- <br class='hidden bot:block' /> -->
      , fill out the form
     <span class='mid:inline-block hidden'>left</span>
@@ -43,19 +41,13 @@
           };
           const namespace = ar[1];
           api.q = api.q || [];
-          typeof namespace === "string"
-            ? (cal.ns[namespace] = api) && p(api, ar)
-            : p(cal, ar);
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
           return;
         }
         p(cal, ar);
       };
   })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", { origin: "https://cal.com" });
-
-  // Important: Please add following attributes to the element you want to open Cal on click
-  // `data-cal-link="bnmwag/30min"`
-  // `data-cal-config='{"layout":"month_view"}'`
 
   Cal("ui", {
     styles: { branding: { brandColor: "#000000" } },

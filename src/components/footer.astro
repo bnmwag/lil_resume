@@ -1,84 +1,90 @@
 ---
-import { getCurrentTimeInVienna } from '@/lib/utils';
-import ThemeToggles from './theme-toggles';
+import { getCurrentTimeInVienna } from "@/lib/utils";
+import ThemeToggles from "./theme-toggles";
 
 const initialTime = getCurrentTimeInVienna();
 ---
 
 <script>
-	import { getCurrentTimeInVienna } from '@/lib/utils';
+  import { getCurrentTimeInVienna } from "@/lib/utils";
 
-	function updateLocalTime() {
-		const localTimeElement = document.getElementById('local-time');
+  function updateLocalTime() {
+    const localTimeElement = document.getElementById("local-time");
 
-		if (!localTimeElement) {
-			console.error('Element with id "local-time" not found');
-			return;
-		}
+    if (!localTimeElement) {
+      console.error('Element with id "local-time" not found');
+      return;
+    }
 
-		const formattedTime = getCurrentTimeInVienna();
+    const formattedTime = getCurrentTimeInVienna();
 
-		localTimeElement.innerHTML = formattedTime;
-	}
+    localTimeElement.innerHTML = formattedTime;
+  }
 
-	setInterval(updateLocalTime, 1000);
+  setInterval(updateLocalTime, 1000);
 </script>
 
 <div class='mt-[50vh]'>
-	<div class='grid grid-cols-3 gap-y-12'>
-		<div class='flex flex-col gap-y-4'>
-			<div class='flex items-center gap-x-2'>
-				<div class='h-2 w-2 bg-emerald-500 rounded-full'>
-					<div
-						class='anim-ping | h-2 w-2 bg-emerald-500 rounded-full'
-					>
-					</div>
-				</div>
-				<span class='text-emerald-500 whitespace-nowrap'
-					>available for work</span
-				>
-			</div>
-			<span
-				id='local-time'
-				class='whitespace-nowrap text-muted-foreground text-sm'
-			>
-				{initialTime}
-			</span>
-			<ThemeToggles client:load />
-		</div>
+  <div class='grid grid-cols-3 gap-y-12'>
+    <div class='flex flex-col gap-y-4'>
+      <div class='flex items-center gap-x-2'>
+        <div class='h-2 w-2 bg-emerald-500 rounded-full'>
+          <div class='anim-ping | h-2 w-2 bg-emerald-500 rounded-full'></div>
+        </div>
+        <span class='text-emerald-500 whitespace-nowrap'>available for work</span>
+      </div>
+      <span id='local-time' class='whitespace-nowrap text-muted-foreground text-sm'>
+        {initialTime}
+      </span>
+      <!-- <ThemeToggles client:load /> -->
+    </div>
 
-		<div
-			class='max-bot:pl-0 max-bot:col-start-1 max-mid:pl-12 max-mid:col-start-2 high:col-start-2 col-span-full grid grid-cols-2 text-sm'
-		>
-			<div class='flex flex-col gap-y-4'>
-				<a
-					class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
-					href='/contact'
-					>Reach out
-					<span
-						class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
-					></span>
-				</a>
-				<a
-					class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
-					href='https://st.bnmwag.dev'
-					>Studio<span
-						class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
-					></span></a
-				>
-				<a
-					class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
-					href='https://github.com/bnmwag'
-					>Github<span
-						class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
-					></span></a
-				>
-			</div>
-			<div class='flex flex-col gap-y-4 text-muted-foreground'>
-				<div>© 2023</div>
-				<div>Benjamin Wagner</div>
-				<div>Linz, Austria</div>
-			</div>
-		</div>
-	</div>
+    <div
+      class='max-bot:pl-0 max-bot:col-start-1 max-mid:pl-12 max-mid:col-start-2 high:col-start-2 col-span-full grid grid-cols-2 text-sm'
+    >
+      <div class='flex flex-col gap-y-4'>
+        <a
+          class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
+          href='/contact'
+          >Reach out
+          <span
+            class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
+          ></span>
+        </a>
+        <!-- <a
+          class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
+          href='https://st.bnmwag.dev'
+          >Studio<span
+            class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
+          ></span></a
+        > -->
+        <a
+          class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
+          href='/imprint'
+          >Imprint<span
+            class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
+          ></span></a
+        >
+        <a
+          class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
+          href='/privacy'
+          >Privacy<span
+            class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
+          ></span></a
+        >
+        <a
+          class='text-muted-foreground hover:text-foreground relative group w-fit transition-main'
+          href='https://github.com/bnmwag'
+          >Github<span
+            class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-muted-foreground group-hover:bg-foreground transition-main'
+          ></span></a
+        >
+      </div>
+      <div class='flex flex-col gap-y-4 text-muted-foreground'>
+        <div>© 2023</div>
+        <div>Benjamin Wagner</div>
+        <div>Linz, Austria</div>
+      </div>
+    </div>
+  </div>
 </div>

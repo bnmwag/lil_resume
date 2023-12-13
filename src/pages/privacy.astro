@@ -1,0 +1,192 @@
+---
+import { Base } from "../layouts/index.astro";
+import { Grid, Nav, CaseList, ServiceList, About, Footer } from "../components/index.astro";
+---
+
+<Base>
+  <div class='w-full px-[20px] mid:px-[120px] grid mid:grid-cols-2'>
+    <Grid />
+    <Nav />
+
+    <div class='min-h-screen pt-[25vh] mid:pt-[50vh] pb-36'>
+      <div class='anim-fade-in | block mb-36 mid:hidden'>
+        <div class='space-y-12'>
+          <h4 class='font-light text-2xl tracking-[-0.05rem]'>Privacy Policy</h4>
+        </div>
+      </div>
+      <div class='anim-fade-in | space-y-12 w-[80%] font-light'>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>General</p>
+          <p class='leading-[1.75]'>
+            The protection and security of your personal data are of great importance to us.
+            Therefore, this website stores and processes data exclusively in accordance with
+            Austrian data protection regulations and in compliance with the European General Data
+            Protection Regulation (GDPR). As a user, you actively agree to data processing in the
+            sense of this statement by using a selection field.
+            <br /><br />
+             This privacy policy applies only to this website. If you are redirected to other sites
+            via links on our pages, please inform yourself directly on the forwarded website about
+            their handling of your data. Your personal data (e.g., title, name, address, email
+            address, telephone number, etc.) will be processed by us only in accordance with the
+            provisions of Austrian and European data protection law. The following regulations
+            inform you about the type, scope, and purpose of the collection, processing, and use of
+            personal data.
+            <br /><br />
+             We would like to point out that data transmission over the Internet (e.g.,
+            communication by email or through unencrypted websites) can have security gaps. Complete
+            protection of data against access by third parties is not possible. When you place an
+            order through our website, your transmitted or entered data will be manually or
+            automatically checked for validity and currency with the existing database and, if
+            necessary, adjusted to correct the data stored with us. To do this, our employees may
+            need to contact you. This is done via email or telephone. The data you enter will be
+            used exclusively for processing the order, handling the registration, or for internal
+            marketing purposes; the data will not be passed on to third parties. The data will be
+            deleted as soon as the respective contract has been fulfilled and there is no longer any
+            legal obligation to store the data.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Links</p>
+          <p class='leading-[1.75]'>
+            We carefully check links that leave our website editorially. Nevertheless, we assume no
+            responsibility or liability for the content of pages linked to from this website or from
+            another Internet presence.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Contact Form</p>
+          <p class='leading-[1.75]'>
+            When you send us inquiries via the contact form, your details from the inquiry form,
+            including the contact details you provided there, will be stored by us for the purpose
+            of processing the inquiry and in case of follow-up questions. We do not pass on this
+            data without your consent.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Inventory Data</p>
+          <p class='leading-[1.75]'>
+            Without your explicit consent or a legal basis, your personal data will not be passed on
+            to third parties outside the scope of contract processing. After complete contract
+            processing, your data will be blocked for further use. After the expiry of the tax and
+            commercial law regulations, these data will be deleted unless you have expressly
+            consented to their further use.
+            <br /><br />
+             Your personal data, insofar as it is necessary for the establishment, content, or
+            modification of the contractual relationship (inventory data), will be used exclusively
+            for contract processing. For example, to deliver goods, your name and address must be
+            passed on to the goods supplier.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Credit Check</p>
+          <p class='leading-[1.75]'>
+            If we make advance deliveries, e.g., in the case of payment on account, we may obtain a
+            credit report about you. For this purpose, we will pass on your personal data (e.g.,
+            name and address) to this company. Based on mathematical-statistical procedures, it is
+            checked how high the risk of payment default is. We make the conclusion of the purchase
+            contract dependent on the result of the credit check.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Web Analysis with Vercel Analytics</p>
+          <p class='leading-[1.75]'>
+            We also use the web analytics tool Vercel Analytics. The service provider is the
+            American company Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel
+            processes data from you, including in the USA. We point out that, in the opinion of the
+            European Court of Justice, there is currently no adequate level of protection for data
+            transfer to the USA. This can involve various risks for the legality and security of
+            data processing. As the basis of data processing with recipients located in third
+            countries (outside the European Union, Iceland, Liechtenstein, Norway, especially in the
+            USA) or data transfer there, Vercel uses so-called standard contractual clauses (=
+            Article 46, Paragraphs 2 and 3 GDPR). Standard Contractual Clauses (SCC) are template
+            provisions provided by the EU Commission, intended to ensure that your data still comply
+            with European data protection standards even when they are transferred to and stored in
+            third countries (such as the USA). Through these clauses, Vercel commits to maintaining
+            European data protection standards in the processing of your relevant data, even if the
+            data are stored, processed, and managed in the USA. These clauses are based on an
+            implementing decision of the EU Commission. You can find the decision and the
+            corresponding standard contractual clauses here:
+            https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de. Learn more about the
+            standard contractual clauses and data processed through the use of Vercel Analytics in
+            the privacy policy at https://vercel.com/legal/privacy-policy.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Information about Cookies</p>
+          <p class='leading-[1.75]'>
+            There are three categories of cookies:
+            <br /><br />
+            <ol>
+              <li>Absolutely necessary cookies to ensure basic functions of the website</li>
+              <li>Functional cookies to ensure the performance of the website</li>
+              <li>Targeted cookies to improve the user experience.</li>
+            </ol>
+             The web pages partly use so-called cookies. Cookies do not harm your computer and do
+            not contain viruses. Cookies serve to make our offer more user-friendly, effective, and
+            secure. Cookies are small text files that are stored on your computer and saved by your
+            browser.<br />
+             Most of the cookies we use are so-called "session cookies". They are automatically
+            deleted after your visit. Other cookies remain stored on your device until you delete
+            them. These cookies allow us to recognize your browser on your next visit. <br />
+             You can set your browser to inform you about the setting of cookies and to allow
+            cookies only in individual cases, to exclude the acceptance of cookies for certain cases
+            or in general, and to activate the automatic deletion of cookies when closing the
+            browser. Disabling cookies may limit the functionality of this website.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>There are three categories of cookies:</p>
+          <p class='leading-[1.75]'>
+            If you generally do not allow us to use cookies, certain functions and pages will not
+            work as expected. In particular, login will not work.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Server Log Files</p>
+          <p class='leading-[1.75]'>
+            The provider of the pages automatically collects and stores information in so-called
+            server log files, which your browser automatically transmits to us. These are:
+            <br /><br />
+            <ul>
+              <li>Browser type and browser version</li>
+              <li>Operating system used</li>
+              <li>Referrer URL</li>
+              <li>Hostname of the accessing computer</li>
+              <li>Time of the server request</li>
+              <li>IP address</li>
+            </ul>
+            <br /><br />
+             These data cannot be assigned to specific persons. We do not merge these data with
+            other data sources. We reserve the right to check this data retrospectively if we become
+            aware of concrete indications of illegal use.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>SSL Encryption</p>
+          <p class='leading-[1.75]'>
+            This site uses SSL encryption for security reasons and to protect the transmission of
+            confidential content, such as inquiries you send to us as the site operator. You can
+            recognize an encrypted connection by the change in the address line of the browser from
+            "http://" to "https://" and by the lock symbol in your browser line. When SSL encryption
+            is activated, the data you transmit to us cannot be read by third parties.
+          </p>
+        </div>
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Information Rights</p>
+          <p class='leading-[1.75]'>
+            Under the EU General Data Protection Regulation, you have the right to obtain
+            information about your stored data free of charge and, if applicable, a right to
+            correct, block, or delete this data. You can ask questions, for example, via the email
+            address specified in the imprint.
+          </p>
+        </div>
+      </div>
+      <Footer />
+    </div>
+    <div class='anim-fade-in | fixed right-0 w-1/2 h-full pt-[50vh] max-mid:hidden'>
+      <div class='space-y-12'>
+        <h4 class='font-light text-2xl tracking-[-0.05rem]'>Privacy Policy</h4>
+      </div>
+    </div>
+  </div>
+</Base>

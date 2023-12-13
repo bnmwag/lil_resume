@@ -1,0 +1,94 @@
+---
+import { Base } from "../layouts/index.astro";
+import { Grid, Nav, CaseList, ServiceList, About, Footer } from "../components/index.astro";
+---
+
+<Base>
+  <div class='w-full px-[20px] mid:px-[120px] grid mid:grid-cols-2'>
+    <Grid />
+    <Nav />
+
+    <div class='min-h-screen pt-[25vh] mid:pt-[50vh] pb-36'>
+      <div class='anim-fade-in | block mb-36 mid:hidden'>
+        <div class='space-y-12'>
+          <h4 class='font-light text-2xl tracking-[-0.05rem]'>Impressum</h4>
+          <h5 class='text-muted-foreground text-xl font-light'>
+            Informationen und Offenlegung gemäß §5 (1) ECG,
+            <br class='hidden mid:block' />
+             § 25 MedienG, § 63 GewO und § 14 UGB
+          </h5>
+        </div>
+      </div>
+      <div class='anim-fade-in | grid grid-cols-2 gap-x-4 gap-y-12 w-[80%] font-light'>
+        <p class='text-muted-foreground'>Website operator:</p>
+        <p>Benjamin Wagner</p>
+
+        <p class='text-muted-foreground'>Address:</p>
+        <p>Bäckerfeld 4, 4331 Naarn</p>
+
+        <p class='text-muted-foreground'>Contact details:</p>
+        <div class='space-y-2'>
+          <p>Phone: +43 660 100 9499</p>
+          <p>Email: bnm.wag@gmail.com</p>
+        </div>
+
+        <div class='space-y-2'>
+          <p class='text-muted-foreground'>Applicable legal provisions:</p>
+          <p class='text-muted-foreground'>Professional title:</p>
+        </div>
+        <div class='space-y-2'>
+          <a href='https://www.ris.bka.gv.at' class='hover:underline' target='_blank'>
+            www.ris.bka.gv.at
+          </a>
+          <p>Media Specialist</p>
+        </div>
+
+        <div class='col-span-full space-y-12'>
+          <div class='space-y-2'>
+            <p class='text-muted-foreground'>Online Dispute Resolution:</p>
+            <p class='leading-[1.75]'>
+              Consumers who are established in Austria or in another contracting state of the ODR
+              Regulation have the opportunity to resolve problems relating to the paid purchase of
+              goods or services within the framework of online dispute resolution (according to OS,
+              AStG). The European Commission provides a platform for this purpose:
+              https://ec.europa.eu/consumers/odr
+            </p>
+          </div>
+          <div class='space-y-2'>
+            <p class='text-muted-foreground'>Copyright:</p>
+            <p class='leading-[1.75]'>
+              The contents of this website are, to the extent legally possible, subject to various
+              protection rights (e.g., copyright). Any use/distribution of provided material that is
+              prohibited by copyright requires the written consent of the website operator.
+            </p>
+          </div>
+          <div class='space-y-2'>
+            <p class='text-muted-foreground'>Disclaimer:</p>
+            <p class='leading-[1.75]'>
+              Despite careful content control, the website operator of this website assumes no
+              liability for the contents of external links. The operators of the linked pages are
+              solely responsible for their content. However, if you become aware of outgoing links
+              that refer to a website with illegal activity/information, we ask for a corresponding
+              notice to remove them immediately in accordance with § 17 para. 2 ECG. The copyright
+              of third parties is respected with the utmost care by the operator of this website. If
+              you nevertheless become aware of a copyright infringement, we ask for a corresponding
+              notice. Upon becoming aware of such legal violations, we will immediately remove the
+              affected content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+    <div class='anim-fade-in | fixed right-0 w-1/2 h-full pt-[50vh] max-mid:hidden'>
+      <div class='space-y-12'>
+        <h4 class='font-light text-2xl tracking-[-0.05rem]'>Impressum</h4>
+        <h5 class='text-muted-foreground text-xl font-light'>
+          Informationen und Offenlegung gemäß §5 (1) ECG,
+          <br class='hidden mid:block' />
+           § 25 MedienG, § 63 GewO und § 14 UGB
+        </h5>
+      </div>
+    </div>
+  </div>
+</Base>

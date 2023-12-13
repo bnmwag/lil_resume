@@ -41,9 +41,10 @@ import { SEO } from "astro-seo";
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
+    <meta name='author' content='Benjamin Wagner' />
     <ViewTransitions />
     <SEO
-      title='bnmwag'
+      title='bnmwag | Creative developer from Linz, Austria'
       description='Creative developer from Linz, Austria'
       openGraph={{
         basic: {
@@ -61,7 +62,8 @@ import { SEO } from "astro-seo";
         meta: [
           {
             name: "keywords",
-            content: "Creative developer, Freelance, Austria, Linz, Blog, Website",
+            content:
+              "UX design, UI design, Web development, App development, Freelance developer, Austria, Linz, Creative developer, Portfolio",
           },
           {
             name: "viewport",
@@ -76,5 +78,6 @@ import { SEO } from "astro-seo";
     <slot />
 
     <script src='../scripts/lenis.ts'></script>
+    <script src='../scripts/title-status.ts'></script>
   </body>
 </html>

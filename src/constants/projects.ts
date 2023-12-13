@@ -4,25 +4,11 @@ const exportState = true;
 
 export const data: Project[] = [
   {
-    title: "studio",
-    url: "https://studio.bnmwag.dev",
-    branch: "studio",
-    tags: ["anything imaginable"],
-    active: false,
-  },
-  {
     title: "HW-Technik",
     url: "https://hwtechnik.at/",
     branch: "freelance",
     tags: ["web", "design", "hosting"],
     active: true,
-  },
-  {
-    title: "assaabloy",
-    url: "https://assaabloy.at",
-    branch: "sps",
-    tags: ["web", "webgl", "design"],
-    active: false,
   },
   {
     title: "Bosch Rexroth SFE",
@@ -49,8 +35,8 @@ export const data: Project[] = [
     title: "Neuronet.ink",
     url: "https://neuronet.ink",
     branch: "freelance",
-    tags: ["design", "web", "blog", "cms", "hosting"],
-    active: false,
+    tags: ["web", "blog", "cms", "hosting"],
+    active: true,
   },
 ];
 

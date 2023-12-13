@@ -1,47 +1,42 @@
 ---
-import type { Project } from '../types.ts';
-import { ArrowRight } from 'lucide-astro';
+import type { Project } from "../types.ts";
+import { ArrowRight } from "lucide-astro";
 
 interface Props extends Project {
-	index: number;
+  index: number;
 }
 
 const { title, url, branch, tags, index } = Astro.props;
 ---
 
-<div
-	class='anim-fade-in | flex items-start gap-x-16'
-	style=`animation-delay: ${index * 0.1}s`
->
-	<div class='space-y-2'>
-		<a
-			href={url}
-			target='_blank'
-			rel='noopener noreferrer'
-			class='flex items-center gap-x-4 group h-8 text-2xl tracking-[-0.05rem]'
-		>
-			<div
-				class='border-[1px] border-foreground h-2 w-2 bg-transparent rounded-full relative overflow-hidden group-hover:h-6 group-hover:w-6 group-hover:bg-foreground transition-main'
-			>
-				<ArrowRight
-					size='16'
-					class='absolute top-1/2 left-1/2 -translate-y-1/2 group-hover:-translate-x-1/2 -translate-x-[200%] text-background transition-main'
-				/>
-			</div>
-			<h3 class='relative'>
-				{title}
-				<span
-					class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-foreground transition-main'
-				></span>{' '}
-				<p
-					class='absolute top-[calc(100%+18px)] text-xs uppercase text-muted-foreground'
-				>
-					{branch}
-				</p>
-			</h3>
-		</a>
-	</div>
-	<ul class='space-y-2'>
-		{tags.map((tag) => <li class='uppercase text-xs'>{tag}</li>)}
-	</ul>
+<div class='anim-fade-in | flex items-start gap-x-16' style=`animation-delay: ${index * 0.1}s`>
+  <div class='space-y-2'>
+    <a
+      href={url}
+      target='_blank'
+      rel='noopener noreferrer'
+      class='flex items-center gap-x-4 group h-8 text-2xl tracking-[-0.05rem]'
+    >
+      <div
+        class='border-[1px] border-foreground h-2 w-2 bg-transparent rounded-full relative overflow-hidden group-hover:h-6 group-hover:w-6 group-hover:bg-foreground transition-main'
+      >
+        <ArrowRight
+          size='16'
+          class='absolute top-1/2 left-1/2 -translate-y-1/2 group-hover:-translate-x-1/2 -translate-x-[200%] text-background transition-main'
+        />
+      </div>
+      <h3 class='relative'>
+        {title}
+        <span
+          class='absolute left-0 top-full h-[1px] group-hover:w-full w-0 bg-foreground transition-main'
+        ></span>
+        <p class='absolute top-[calc(100%+18px)] text-xs uppercase text-muted-foreground'>
+          {branch}
+        </p>
+      </h3>
+    </a>
+  </div>
+  <ul class='space-y-2'>
+    {tags.map((tag) => <li class='uppercase text-xs'>{tag}</li>)}
+  </ul>
 </div>

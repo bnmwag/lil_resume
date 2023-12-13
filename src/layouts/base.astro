@@ -17,27 +17,25 @@ import { SEO } from "astro-seo";
 ---
 
 <script is:inline>
-const getThemePreference = () => {
-  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-    return localStorage.getItem("theme");
-  }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "theme-light";
-};
-const isDark = getThemePreference() === "dark";
-document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "theme-light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-if (typeof localStorage !== "undefined") {
-  const observer = new MutationObserver(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "theme-light");
-  });
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["class"],
-  });
-}
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "theme-light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
 </script>
 
 <html lang='en'>
@@ -63,8 +61,7 @@ if (typeof localStorage !== "undefined") {
         meta: [
           {
             name: "keywords",
-            content:
-              "Creative developer, Freelance, Austria, Linz, Blog, Website",
+            content: "Creative developer, Freelance, Austria, Linz, Blog, Website",
           },
           {
             name: "viewport",
@@ -75,7 +72,7 @@ if (typeof localStorage !== "undefined") {
       }}
     />
   </head>
-  <body class='bg-background text-foreground font-viet'>
+  <body class='bg-black text-foreground font-viet'>
     <slot />
 
     <script src='../scripts/lenis.ts'></script>
